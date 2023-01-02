@@ -1,2 +1,8 @@
 ### golang代理
 > puppet\zulip\manifests\golang.pp：https://golang.org 替换为 https://mirrors.ustc.edu.cn/golang
+
+### 安装命令
+>./scripts/setup/install --certbot     --email=ruelang@126.com --hostname=region-7.seetacloud.com
+
+### Autodl 自定义服务端口 6006
+> http://region-7.seetacloud.com:14518/
