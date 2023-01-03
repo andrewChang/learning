@@ -2,7 +2,13 @@
 > puppet\zulip\manifests\golang.pp：https://golang.org 替换为 https://mirrors.ustc.edu.cn/golang
 
 ### 安装命令
->./scripts/setup/install --certbot     --email=ruelang@126.com --hostname=region-7.seetacloud.com
+>./scripts/setup/install --self-signed-cert     --email=ruelang@126.com --hostname=autodl-container-85b211b6ac-39b303ad
 
+安装命令中可以带两种参数：
+  --cerbot：用于线上product环境搭建，需要有域名SSL证书；
+  --self-signed-cert：用于测试服务器搭建，Zulip安装程序会生成只签名SSL证书，需要确保安装OpenSSL。
+  
 ### Autodl 自定义服务端口 6006
 > http://region-7.seetacloud.com:14518/
+
+su zulip -c'/home/zulip/deployments/current/scripts/restart-server'
