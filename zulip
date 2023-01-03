@@ -11,4 +11,29 @@
 ### Autodl 自定义服务端口 6006
 > http://region-7.seetacloud.com:14518/
 
-su zulip -c'/home/zulip/deployments/current/scripts/restart-server'
+### 修改ngix端口
+
+> sudo vim /etc/nginx/sites-available/zulip-enterprise
+
+> include /etc/nginx/zulip-include/upstreams;
+ server {
+    listen 81;
+    location /local-static {
+        alias /home/zulip/local-static;
+    }
+    include /etc/zulip/nginx_sharding.conf;
+    include /etc/nginx/zulip-include/app;
+ }
+
+### 重启ngix
+> nginx -s reload
+
+### 启动postgreSql
+> service postgresql start
+### 关闭postgreSql
+> service postgresql stop
+### 查看postgreSql状态
+> service postgresql status
+
+### 启动zulip服务
+> zulip -c'/home/zulip/deployments/current/scripts/restart-server'
