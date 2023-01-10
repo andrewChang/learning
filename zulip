@@ -40,6 +40,9 @@
 
 ### 用户登录
 > psql -U zulip -d zulip -h 127.0.0.1 -p 5432
+> CREATE USER zulip WITH PASSWORD 'zulip';
+> CREATE DATABASE zulip OWNER zulip;
+> GRANT ALL PRIVILEGES ON DATABASE zulip to zulip;
 
 ### 其他命令
 > \l：列出所有数据库
