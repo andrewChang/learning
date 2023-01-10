@@ -50,4 +50,6 @@
 > \du：列出所有用户
 > create schema zulip; 创建模式(schema)
 > CREATE TABLE zulip.zerver_message(name VARCHAR(20), signup_date DATE);创建指定模式下的表
+> SET search_path TO zulip,'$user',public; 设置模式查询顺序
+> show search_path; 查询模式顺序
 
