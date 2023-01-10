@@ -37,3 +37,16 @@
 
 ### 启动zulip服务
 > zulip -c'/home/zulip/deployments/current/scripts/restart-server'
+
+### 用户登录
+> psql -U zulip -d zulip -h 127.0.0.1 -p 5432
+
+### 其他命令
+> \l：列出所有数据库
+> \c [database_name]
+> \d：列出当前数据库的所有表格
+> \d [table_name]
+> \du：列出所有用户
+> create schema zulip; 创建模式(schema)
+> CREATE TABLE zulip.zerver_message(name VARCHAR(20), signup_date DATE);创建指定模式下的表
+
