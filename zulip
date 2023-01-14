@@ -35,6 +35,11 @@ database user, and then run:
     include /etc/zulip/nginx_sharding.conf;
     include /etc/nginx/zulip-include/app;
  }
+ 
+ root用户下执行
+ supervisorctl status
+ supervisorctl restart all
+ supervisorctl stop all
 
 ### 重启ngix
 > nginx -s reload
