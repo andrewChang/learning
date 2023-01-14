@@ -11,6 +11,7 @@
 ### 2 conda 命令
 #### 2.1 conda env list or conda info -e
 conda create --name env_py38 python=3.8
+source activate
 #### 2.2 环境名确实名称的解决方法
     conda activate <env-path> 
     source activate
