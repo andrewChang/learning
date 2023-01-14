@@ -36,10 +36,12 @@ database user, and then run:
     include /etc/nginx/zulip-include/app;
  }
  
- root用户下执行
- supervisorctl status
- supervisorctl restart all
- supervisorctl stop all
+ ### root用户下执行
+ > supervisorctl status
+ > supervisorctl restart all
+ > supervisorctl stop all
+### root用户下，修改配置后，使配置生效执行如下指令
+> /home/zulip/deployments/current/scripts/zulip-puppet-apply
 
 ### 重启ngix
 > nginx -s reload
