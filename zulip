@@ -41,11 +41,14 @@ database user, and then run:
  > supervisorctl restart all
  > supervisorctl stop all
 ### root用户下，修改配置后，使配置生效执行如下指令
+> /etc/zulip/zulip.conf 修改配置文件
 > /home/zulip/deployments/current/scripts/zulip-puppet-apply
 ### ./stop-server报PermissionError: [Errno 13] Permission denied
 > 修改方法：chmod 777 /var/run/supervisor.sock
 
 ### 重启ngix
+> vi /etc/nginx/sites-available/zulip-enterprise
+> vi /etc/zulip/zulip.conf
 > nginx -s reload
 
 ### 启动postgreSql
