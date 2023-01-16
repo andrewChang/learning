@@ -2,13 +2,13 @@
 > puppet/zulip/manifests/golang.pp：https://golang.org/dl 替换为 https://mirrors.ustc.edu.cn/golang
 
 ### 安装命令
->./scripts/setup/install --self-signed-cert     --email=ruelang@126.com --hostname=localhost
+>./scripts/setup/install --self-signed-cert     --email=ruelang@126.com --hostname=150.158.32.245
 
 安装命令中可以带两种参数：
   --cerbot：用于线上product环境搭建，需要有域名SSL证书；
   --self-signed-cert：用于测试服务器搭建，Zulip安装程序会生成只签名SSL证书，需要确保安装OpenSSL。
  ### 安装命令（不安装数据库）
- ./scripts/setup/install --self-signed-cert     --email=ruelang@126.com --hostname=localhost --no-init-db --postgresql-missing-dictionaries
+ ./scripts/setup/install --self-signed-cert     --email=ruelang@126.com --hostname=150.158.32.245 --no-init-db --postgresql-missing-dictionaries
 
 Success!
 Stopping because --no-init-db was passed.  To complete the
@@ -20,6 +20,9 @@ database user, and then run:
 
 > su zulip -c '/home/zulip/deployments/current/scripts/setup/initialize-database'
 > su zulip -c '/home/zulip/deployments/current/manage.py generate_realm_creation_link'
+
+### SSL证书搞定前，可以在 Chrome 启动时加上 --ignore-certificate-errors  规避证书的问题，详情见如下：
+> https://cloud.tencent.com/developer/article/1656694
    
 >
 ### Autodl 自定义服务端口 6006
