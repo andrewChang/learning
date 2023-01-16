@@ -15,8 +15,11 @@ Stopping because --no-init-db was passed.  To complete the
 installation, configure PostgreSQL by creating the database and
 database user, and then run:
 
-   su zulip -c '/home/zulip/deployments/current/scripts/setup/initialize-database'
-   su zulip -c '/home/zulip/deployments/current/manage.py generate_realm_creation_link'
+### 数据库刷表，初始化动作
+> su postgres -c 'psql -f scripts/setup/create-db.sql'
+
+> su zulip -c '/home/zulip/deployments/current/scripts/setup/initialize-database'
+> su zulip -c '/home/zulip/deployments/current/manage.py generate_realm_creation_link'
    
 >
 ### Autodl 自定义服务端口 6006
@@ -57,8 +60,7 @@ database user, and then run:
 > service postgresql stop
 ### 查看postgreSql状态
 > service postgresql status
-### 数据库刷表，初始化动作
-> su postgres -c 'psql -f scripts/setup/create-db.sql'
+
 
 ### 启动zulip服务
 > su zulip -c '/home/zulip/deployments/current/scripts/restart-server'
