@@ -61,7 +61,8 @@ database user, and then run:
 ### 查看postgreSql状态
 > service postgresql status
 
-
+### 更新nginx配置
+> /home/zulip/deployments/current/scripts/zulip-puppet-apply
 ### 启动zulip服务
 > su zulip -c '/home/zulip/deployments/current/scripts/restart-server'
 
