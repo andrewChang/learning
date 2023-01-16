@@ -1,5 +1,5 @@
 ### golang代理
-> puppet/zulip/manifests/golang.pp：https://golang.org 替换为 https://mirrors.ustc.edu.cn/golang
+> puppet/zulip/manifests/golang.pp：https://golang.org/dl 替换为 https://mirrors.ustc.edu.cn/golang
 
 ### 安装命令
 >./scripts/setup/install --self-signed-cert     --email=ruelang@126.com --hostname=localhost
