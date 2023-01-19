@@ -92,7 +92,7 @@ database user, and then run:
 1.  openssl genrsa -out server.key 2048
 2.  openssl req -new -key server.key -out server.csr
 3.  openssl x509 -req -in server.csr -out server.crt -signkey server.key -days 3650
-### 编辑 /etc/nginx/sites-available
+### 编辑 /etc/nginx/sites-available 并重新加载 nginx -s reload
 server {
         listen 80;
         listen [::]:80;
