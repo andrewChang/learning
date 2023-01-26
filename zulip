@@ -133,3 +133,8 @@ server {
 
 ### uwsgi 配置文件
 > vi /etc/zulip/uwsgi.ini
+
+### linux查看进程监听的端口号（包括进程的名字，pid，监听的端口号等）
+> lsof -i.
+> lsof -i:端口号
+> netstat -tunlp | grep 端口号
