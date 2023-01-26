@@ -138,7 +138,8 @@ server {
 > conda install -c conda-forge uwsgi
 ### 安装lsof
 > conda install -c conda-forge lsof
-
+### 安装tornado
+> conda install -c conda-forge tornado
 ### linux查看进程监听的端口号（包括进程的名字，pid，监听的端口号等）
 > lsof -i.
 > lsof -i:端口号
