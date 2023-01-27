@@ -68,6 +68,8 @@ database user, and then run:
 > /home/zulip/deployments/current/scripts/zulip-puppet-apply
 ### 启动zulip服务
 > su zulip -c '/home/zulip/deployments/current/scripts/restart-server'
+### 查看日志
+> su zulip -c '/home/zulip/deployments/current/scripts/log-search 404 -L'
 
 ### 用户登录
 > psql -U zulip -d zulip -h 127.0.0.1 -p 5432
