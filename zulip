@@ -170,4 +170,7 @@ server {
 ### FAQ 
 > 1 https访问/static/images/favicon.png报404
 > - 原因：uwsgi socket访问失败，重启zulip整个服务，再试
-> 2 emoji中间有段时间显示出来了，清楚浏览器缓存后，又显示不出来了，暂未找到解决方案，大概率是要翻墙
+> 2 emoji表情无法显示
+> - emoji中间有段时间显示出来了，清除浏览器缓存后，又显示不出来了，暂未找到解决方案，大概率是要翻墙
+> 3 /json/event消息 404，页面显示“Unable to connect to Zulip. Updates may be delayed. Retrying soon”
+> - 根因未找到，大概率是tornado服务未正常运行，或者nginx配置的tornado有问题
