@@ -169,8 +169,12 @@ server {
 
 ### FAQ 
 > 1 https访问/static/images/favicon.png报404
-> - 原因：uwsgi socket访问失败，重启zulip整个服务，再试
+> - 原因：zulip-enterprise配置中，https的server中 未引入 include /etc/nginx/zulip-include/app;
 > 2 emoji表情无法显示
-> - emoji中间有段时间显示出来了，清除浏览器缓存后，又显示不出来了，暂未找到解决方案，大概率是要翻墙
+> - 问题3解决后，同时也能够显示emoji了
 > 3 /json/event消息 404，页面显示“Unable to connect to Zulip. Updates may be delayed. Retrying soon”
-> - 根因未找到，大概率是tornado服务未正常运行，或者nginx配置的tornado有问题
+> - 原因：tornado配置问题，socket配置为uwsgi-socket未成功，更改为端口形式，socket=:8001，且upstreams同步更改为：
+> upstream django {
+>    server 127.0.0.1:8001;
+> }
+> 并重启zulip服务，以及重启nginx
