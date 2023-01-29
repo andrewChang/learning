@@ -149,6 +149,11 @@ server {
 > lsof -i.
 > lsof -i:端口号
 > netstat -tunlp | grep 端口号
+### 检测端口连通性
+> - telnet ip port
+> - ssh -v -p port username@ip
+> - curl ip:port
+> - wget ip:port
 
 ### nginx Location 匹配规则 [ = | ~ | ~* | ^~ ]
 > = 表示精确匹配
