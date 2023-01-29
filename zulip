@@ -70,6 +70,8 @@ database user, and then run:
 > su zulip -c '/home/zulip/deployments/current/scripts/restart-server'
 ### 查看日志
 > su zulip -c '/home/zulip/deployments/current/scripts/log-search 404 -L'
+### 测试发邮件
+> su zulip -c '/home/zulip/deployments/current/manage.py send_test_email user@example.com'
 
 ### 用户登录
 > psql -U zulip -d zulip -h 127.0.0.1 -p 5432
