@@ -190,3 +190,6 @@ server {
 > - vi /etc/postfix/main.cf
 > - $ systemctl start postfix
 > -  systemctl enable postfix
+> 5. 配置本地邮箱服务器
+> - How do you configure Django to send mail through Postfix? [closed]
+> - https://stackoverflow.com/questions/26333009/how-do-you-configure-django-to-send-mail-through-postfix
