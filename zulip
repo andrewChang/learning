@@ -174,6 +174,21 @@ server {
 > - 在顺序上，前缀字符串顺序不重要，按照匹配长度来确定，正则表达式则按照定义顺序。
 > - 在优先级上，= 修饰符最高，^~ 次之，再者是正则，最后是前缀字符串匹配。
 
+### 安装配置外发邮箱
+> 安装postfix
+> - apt install postfix
+> 配置django邮箱
+> - /etc/zulip/settings.py
+> EMAIL_HOST = "localhost"
+> EMAIL_HOST_USER = ''
+> EMAIL_HOST_PASSWORD = ''
+> EMAIL_USE_TLS = False
+> EMAIL_PORT = 25
+> EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+> DEFAULT_FROM_EMAIL = 'whatever@example.com'
+> ADD_TOKENS_TO_NOREPLY_ADDRESS = False
+> NOREPLY_EMAIL_ADDRESS  = 'noreply@localhost'
+
 ### FAQ 
 > 1 https访问/static/images/favicon.png报404
 > - 原因：zulip-enterprise配置中，https的server中 未引入 include /etc/nginx/zulip-include/app;
