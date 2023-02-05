@@ -199,7 +199,7 @@ server {
 > 2 emoji表情无法显示
 > - 问题3解决后，同时也能够显示emoji了
 > 3 /json/event消息 404，页面显示“Unable to connect to Zulip. Updates may be delayed. Retrying soon”
-> - 原因：tornado配置问题，socket配置为uwsgi-socket未成功，更改为端口形式，socket=:8001，且upstreams同步更改为：
+> - 原因：tornado配置问题，socket配置为uwsgi-socket未成功，./zulip/uwsgi.ini 更改为端口形式，socket=:8001，且upstreams同步更改为：
 > upstream django {
 >    server 127.0.0.1:8001;
 > }
