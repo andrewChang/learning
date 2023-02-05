@@ -119,8 +119,8 @@ server {
            proxy_http_version 1.1;
            proxy_buffering off;
            proxy_read_timeout 20m;
-           include uwsgi_params;
-           #proxy_pass http://150.158.32.245:80;
+           include /etc/nginx/zulip-include/certbot;
+           include /etc/nginx/zulip-include/app;
         }
 }
 ### SSL 证书依赖DNS域名验证，或者可以通过zerossl进行IP SSL申请，腾讯云有免费的DV SSL但是要抢，zerossl可以注册3个月的免费IP SSL
