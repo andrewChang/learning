@@ -39,6 +39,11 @@ source activate
     conda config --remove-key channels
 #### 2.5 查看源
     pip config list
+    
+#### 2.8 创建新环境
+> conda create -n django_env python=3.8
+
+
 ### 3 autodl新建用户及目录属性
 #### 3.1 创建root组的用户ty
     useradd  -d /home/ty -m ty -g root -s /bin/bash
