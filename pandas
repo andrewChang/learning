@@ -1,0 +1,27 @@
+https://blog.csdn.net/qq_42067550/article/details/106243071
+
+### 1.1 根据 label 选择特定的几列
+> print(df[['name', 'Math_A', 'Math_B']])
+> #注意这里是 双重 []
+### 1.2 选择单列的两种方式
+> print(df['name'])
+> # 注意这里就是 单 []
+> print(df.name)
+### 1.3 通过正则表达式选择列
+> print(df.filter(regex='B$')) 
+> # 选择以 'B' 为结尾的 label
+
+## 2. 同时对 行 和 列 进行筛选
+### 2.1 通过切片 df.loc[ : , : ]
+> print(df.loc[:2,'English_A':'English_B'])
+> # 注意，这里的切片 与 Python 本身的不同，包含了结尾！
+>  所以这个例子中包含了 第 2 行 和 'English_B' 列
+
+### 2.2 通过选择 序号 选择列 df.iloc[ : , : ]
+> print(df.iloc[:2 , [0,3]])
+> # 注意，这里的切片没有包含第 2 行！同时选择了 第 0 列 和 第 3 列
+> # 如果想要 同时选择 0～3 列（共4列），要使用 :4
+
+### 2.3 对 特定 列的数据进行逻辑筛选
+> print(df.loc[df['English_A'] > 2, ['name', 'English_A']])
+> # 这里我希望查看 'English_A' 这个科目分数 2 分以上有哪些人
