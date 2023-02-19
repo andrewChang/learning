@@ -193,6 +193,21 @@ server {
 > Successfully sent 2 emails to XXX@qq.com!
 > 返回上述结果即可，邮箱没收到也没关系
 
+### zulip-bot
+> source /root/workspace/python-zulip-api/zulip-api-py3-venv/bin/activate
+> /etc/supervisor/conf.d/zulip-botserver.conf
+> [program:zulip-botserver]
+> command=nice -n5 /root/workspace/python-zulip-api/zulip-api-py3-venv/bin/zulip-run-bot xiaoyi --config-file /root/workspace/local_space/xiaoyirc
+> startsecs=3
+> stdout_logfile=/var/log/zulip_botserver.log ; all output of your Botserver will be logged here
+> redirect_stderr=true
+
+
+supervisorctl reread
+supervisorctl update
+supervisorctl restart all
+supervisorctl status
+
 ### FAQ 
 > 1 https访问/static/images/favicon.png报404
 > - 原因：zulip-enterprise配置中，https的server中 未引入 include /etc/nginx/zulip-include/app;
