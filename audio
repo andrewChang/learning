@@ -1,0 +1,4 @@
+### windows 删除占用端口的进程
+- netstat -ano | findstr 8080
+得到进程号，用如下命令删除
+- taskkill -f -t -im 进程号
