@@ -2,3 +2,9 @@
 - netstat -ano | findstr 8080
 得到进程号，用如下命令删除
 - taskkill -f -t -im 进程号
+
+
+from pydub import AudioSegment
+sound = AudioSegment.from_wav("/path/to/file.wav")
+sound = sound.set_channels(1)
+sound.export("/output/path.wav", format="wav")
