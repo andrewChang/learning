@@ -8,3 +8,6 @@ from pydub import AudioSegment
 sound = AudioSegment.from_wav("/path/to/file.wav")
 sound = sound.set_channels(1)
 sound.export("/output/path.wav", format="wav")
+
+ffmpeg -i file.wav -f s16be -ar 8000 -acodec pcm_s16be file.raw
+ffmpeg -i file.wav -f s16le -ar 8000 -acodec pcm_s16le file.raw
