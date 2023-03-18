@@ -10,4 +10,4 @@ sound = sound.set_channels(1)
 sound.export("/output/path.wav", format="wav")
 
 
-ffmpeg -i file.wav -f s16le -ar 8000 -acodec pcm_s16le file.raw
+ffmpeg -i file.wav -f s16le -ar 16000 -acodec pcm_s16le file.raw
