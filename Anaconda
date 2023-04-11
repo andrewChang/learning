@@ -37,8 +37,11 @@ source activate
 
 #### 2.4 恢复默认源
     conda config --remove-key channels
-#### 2.5 查看源
+#### 2.5 查看安装源
     pip config list
+    
+### 2.6 conda 查看安装源
+    conda config --show-sources
     
 #### 2.8 创建新环境
 > conda create -n django_env python=3.8
