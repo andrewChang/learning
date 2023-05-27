@@ -27,6 +27,9 @@ source activate
     方式一：
     pip config set global.index-url http://mirrors.aliyun.com/pypi/simple
     pip config set global.trusted-host mirrors.aliyun.com
+    or
+    pip config set global.index-url http://mirrors.tencentyun.com/pypi/simple
+    pip config set global.trusted-host mirrors.tencentyun.com
     方式二：
     vi ~/.pip/pip.conf or vi /etc/.pip/pip.conf
     [global]
